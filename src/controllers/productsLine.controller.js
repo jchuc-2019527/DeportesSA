@@ -34,12 +34,15 @@ exports.createProductLine = (req, res)=>{
     }
 }
 
+// Obtener solo una linea de producto dado el ID
 exports.getProductLine = (req, res)=>{
     try{
         const idProductLine = req.params.idProductLine;
         if(idProductLine){
             let productLineExist = db.find(productLine => productLine.id === idProductLine);
             return res.status(200).send({message:'ProductLine found', productLineExist});
+        }else{
+            return res.status(500).send({message: 'Product line not found'});
         }
     }catch(err){
         console.log(err);
