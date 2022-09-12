@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "c90c1d04-cdf0-487f-91ce-7c6792a8cebe",
+		"name": "JSON-SERVER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19806241"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "id",
+								"value": "5",
+								"type": "text"
+							},
+							{
+								"key": "name",
+								"value": "prueba",
+								"type": "text"
+							},
+							{
+								"key": "price",
+								"value": "21",
+								"type": "text"
+							},
+							{
+								"key": "description",
+								"value": "Esta es una orueba de agregar",
+								"type": "text"
+							},
+							{
+								"key": "categoriaId",
+								"value": "3",
+								"type": "text"
+							},
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jchuc@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3200/brand/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameMarca",
+									"value": "Adidas",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es una marca cara",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/brand/createBrand/eac375b8-6b4a-4959-a228-f220bcb1dc8d",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"createBrand",
+								"eac375b8-6b4a-4959-a228-f220bcb1dc8d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlYWMzNzViOC02YjRhLTQ5NTktYTIyOC1mMjIwYmNiMWRjOGQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEpZLk82NDZUd3NvU0lQMVRDQ1dWRXVnZWw3VW1TUDc0Q002Z0JTZmhHS3hBNFNCWXhENnhlIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MjkzOTYxNywiZXhwIjoxNjYyOTU3NjE3fQ.9-1UMhqQ5I4KnYxdWZgY9lKX3mvzjMBaCqyfxDSMNTg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es una marca cara",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/brand/getBrand/ea8fd990-3dea-47d1-9736-0f9065d52e8c",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"getBrand",
+								"ea8fd990-3dea-47d1-9736-0f9065d52e8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlYWMzNzViOC02YjRhLTQ5NTktYTIyOC1mMjIwYmNiMWRjOGQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEpZLk82NDZUd3NvU0lQMVRDQ1dWRXVnZWw3VW1TUDc0Q002Z0JTZmhHS3hBNFNCWXhENnhlIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MjkzOTYxNywiZXhwIjoxNjYyOTU3NjE3fQ.9-1UMhqQ5I4KnYxdWZgY9lKX3mvzjMBaCqyfxDSMNTg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "testing",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Es una marca cara",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/brand/getBrands",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"getBrands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brands Deleted",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlYWMzNzViOC02YjRhLTQ5NTktYTIyOC1mMjIwYmNiMWRjOGQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEpZLk82NDZUd3NvU0lQMVRDQ1dWRXVnZWw3VW1TUDc0Q002Z0JTZmhHS3hBNFNCWXhENnhlIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MjkzOTYxNywiZXhwIjoxNjYyOTU3NjE3fQ.9-1UMhqQ5I4KnYxdWZgY9lKX3mvzjMBaCqyfxDSMNTg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/brand/deleteBrand/ea8fd990-3dea-47d1-9736-0f9065d52e8c",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"deleteBrand",
+								"ea8fd990-3dea-47d1-9736-0f9065d52e8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brands Deleted",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlYWMzNzViOC02YjRhLTQ5NTktYTIyOC1mMjIwYmNiMWRjOGQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEpZLk82NDZUd3NvU0lQMVRDQ1dWRXVnZWw3VW1TUDc0Q002Z0JTZmhHS3hBNFNCWXhENnhlIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MjkzOTYxNywiZXhwIjoxNjYyOTU3NjE3fQ.9-1UMhqQ5I4KnYxdWZgY9lKX3mvzjMBaCqyfxDSMNTg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/brand/getBrandsDeleted",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"getBrandsDeleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brands Actives",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlYWMzNzViOC02YjRhLTQ5NTktYTIyOC1mMjIwYmNiMWRjOGQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEpZLk82NDZUd3NvU0lQMVRDQ1dWRXVnZWw3VW1TUDc0Q002Z0JTZmhHS3hBNFNCWXhENnhlIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MjkzOTYxNywiZXhwIjoxNjYyOTU3NjE3fQ.9-1UMhqQ5I4KnYxdWZgY9lKX3mvzjMBaCqyfxDSMNTg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/brand/getBrandsActives",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"getBrandsActives"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brands",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlYWMzNzViOC02YjRhLTQ5NTktYTIyOC1mMjIwYmNiMWRjOGQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEpZLk82NDZUd3NvU0lQMVRDQ1dWRXVnZWw3VW1TUDc0Q002Z0JTZmhHS3hBNFNCWXhENnhlIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2MjkzOTYxNywiZXhwIjoxNjYyOTU3NjE3fQ.9-1UMhqQ5I4KnYxdWZgY9lKX3mvzjMBaCqyfxDSMNTg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameMarca",
+									"value": "Supreme",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es una marca buenarda",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/brand/updateBrand/ea8fd990-3dea-47d1-9736-0f9065d52e8c",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"brand",
+								"updateBrand",
+								"ea8fd990-3dea-47d1-9736-0f9065d52e8c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products Line",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3200/productsLine/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Line",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameLine",
+									"value": "Pantalones",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Aqui van todas las playeras",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/createProductLine",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"createProductLine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Line",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/getProductLine/865bc055-3980-4e46-a245-1a356ae0770e",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"getProductLine",
+								"865bc055-3980-4e46-a245-1a356ae0770e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products Line",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/getProductLine/865bc055-3980-4e46-a245-1a356ae0770e",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"getProductLine",
+								"865bc055-3980-4e46-a245-1a356ae0770e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Line",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/deleteProductLine/865bc055-3980-4e46-a245-1a356ae0770e",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"deleteProductLine",
+								"865bc055-3980-4e46-a245-1a356ae0770e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Line Deleted",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/getProductsLineDeleted",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"getProductsLineDeleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Line Actives",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/getProductsLineActives",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"getProductsLineActives"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Line",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameLine",
+									"value": "Sueteres",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Aqui van los sueteres",
+									"type": "text"
+								},
+								{
+									"key": "statusLine",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3200/productsLine/updateProductLine/1050295b-a964-49b9-8099-dff252ec6f82",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"productsLine",
+								"updateProductLine",
+								"1050295b-a964-49b9-8099-dff252ec6f82"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
