@@ -16,7 +16,32 @@ exports.test = (req, res)=>{
      return res.send({message: 'test running'});
 }
 
-
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *      User:
+ *          type:object
+ *           properties:
+ *              name:
+ *                 type: string
+ *                  description: the name
+ *              username:
+ *                  type:string
+ *                  description: the username
+ *              email:
+ *                  type: string
+ *                  description: the email
+ *              password:
+ *                  type: string
+ *                  description: the email
+ *               required:
+ *                  - name
+ *                  - username
+ *                  -email
+ *                  -password
+ *              
+ */
 exports.register = async (req, res)=>{
     try{
 
