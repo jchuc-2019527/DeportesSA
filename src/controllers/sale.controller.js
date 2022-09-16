@@ -11,7 +11,7 @@ exports.test = (req, res) =>{
 
 exports.sale = (req, res) =>{
     try{
-        const idProducts = req.params.idProducts;
+        const idProducts = req.body.idProducts;
         const productExist = db.find(product => product.id === idProducts);
         const {id, date, invoiceName, quantity, total, subTotal} = req.body;
         if(!quantity || !invoiceName) return res.send({message: 'Please added all params'});
@@ -19,25 +19,22 @@ exports.sale = (req, res) =>{
             let newSale = {
                 id: uuid.v4(),
                 date: new Date(),
-                idProducts: [],
+                idProducts,
                 invoiceName,
                 quantity: Number(quantity),
                 subTotal: Number(subTotal),
                 //total: Number(total),
             };
-            
-            console.log(newSale);
             let subtotal = productExist.precio * Number(req.body.quantity);
             newSale.subTotal = subtotal;
             productExist.total = total
             sale.push(newSale);
             fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
             let restaStock = productExist.stock;
-            console.log(restaStock);
             let newStock = restaStock -  Number(req.body.quantity);
             productExist.stock = newStock;
             fs.writeFileSync('src/db.json',JSON.stringify(db), 'utf-8');
-            console.log(newStock);
+            fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
             return res.send({message: 'Succesful purchase', newSale, productExist})
         }else{ 
             return res.send({message: 'Product nor found'});

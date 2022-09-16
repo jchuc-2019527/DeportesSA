@@ -2,6 +2,7 @@
 
 const bodyParser = require("body-parser");
 const express = require("express");
+const app = express();
 const helmet = require("helmet");
 const cors = require("cors");
 const swaggerUI = require("swagger-ui-express");
@@ -26,11 +27,12 @@ const swaggerSpec = {
       },
     ],
   },
-  apis: [`${path.join(__dirname, './routes/*.js')}`],
+  apis: ["./src/routes/*.js"],
 };
+ const swaggerSpects = swaggerJsDoc(swaggerSpec);
+ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpects));
 
 
-const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(helmet({}));
@@ -41,17 +43,13 @@ app.use("/brand", brandRoutes);
 app.use("/productsLine", productsLineRoutes);
 app.use("/products", productsRouter);
 app.use("/sale", saleRouter);
-app.use(
-  "/api-doc",
-  swaggerUI.serve,
-  swaggerUI.setup(swaggerJsDoc(swaggerSpec))
-);
+
 
 app.get('/', (req,res) =>{
     res.send('WELCOME TO MY API :D')
 })
 
-app.get('**', (req, res) => {
+app.get('hola', (req, res) => {
     res.send('ENPOINT NOT FOUND :(')
 })
 exports.initServer = () =>

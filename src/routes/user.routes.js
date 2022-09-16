@@ -1,42 +1,24 @@
 'use strict'
 
 const express = require('express');
+const res = require('express/lib/response');
 const api = express.Router();
 const userController = require('../controllers/user.controller')
 
 
 api.get('/test', userController.test);
-
 /**
  * @swagger
- * components:
- *  schemas:
- *      User:
- *          type:object
- *           properties:
- *              name:
- *                 type: string
- *                  description: the name
- *              username:
- *                  type:string
- *                  description: the username
- *              email:
- *                  type: string
- *                  description: the email
- *              password:
- *                  type: string
- *                  description: the email
- *               required:
- *                  - name
- *                  - username
- *                  -email
- *                  -password
- *              
+ * /api/test:
+ *  get:
+ *   description: Use to request all users
  */
 
-
-api.post('/register', userController.register);
+api.post("/register", userController.register);
 
 api.post('/login', userController.login);
+api.get('/**', (req, res) => {
+    return res.send('ENPOINT NOT FOUND :(')
+})
 
 module.exports = api;
