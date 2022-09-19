@@ -77,11 +77,66 @@ api.get('/test', brandController.test);
  *              description: error en el servidor
  */
 api.post('/createBrand',[mdAuth.ensureAuth], brandController.createBrand);
-api.get('/getBrand/:idBrand',[mdAuth.ensureAuth], brandController.getBrand);
-api.get('/getBrands',[mdAuth.ensureAuth], brandController.getBrands);
-api.delete('/deleteBrand/:idBrand',[mdAuth.ensureAuth], brandController.deleteBrand);
-api.get('/getBrandsDeleted',[mdAuth.ensureAuth], brandController.getBrandsDeleted);
-api.get('/getBrandsActives',[mdAuth.ensureAuth], brandController.getBrandsActives);
-api.put('/updateBrand/:idBrand',[mdAuth.ensureAuth], brandController.updateBrand);
+
+/**
+ * @swagger
+ * /brand/:{idBrand}:
+ *  get:
+ *      summary: Obetener una marca 
+ *      tags: [Brand]
+ */
+
+api.get('/brand/:idBrand',[mdAuth.ensureAuth], brandController.brand);
+
+/**
+ * @swagger
+ * /brands:
+ *  get:
+ *      summary: Obtener todas las marcas
+ *      tags: [Brand]
+ */
+
+api.get('/brands',[mdAuth.ensureAuth], brandController.brands);
+
+/**
+ * @swagger
+ * /brandD/:{idBrand}:
+ *  delete:
+ *      summary: Eliminar una marca
+ *      tags: [Brand]
+ */
+
+api.delete('/brandD/:idBrand',[mdAuth.ensureAuth], brandController.brandD);
+
+/**
+ * @swagger
+ * /brandsDeleted:
+ *  get:
+ *      summary: Ver las marcas eliminadas
+ *      tags: [Brand]
+ */
+
+api.get('/brandsDeleted',[mdAuth.ensureAuth], brandController.brandsDeleted);
+
+/**
+ * @swagger
+ * /brandsActives:
+ *  get:
+ *      summary: Ver las marcas activas
+ *      tags: [Brand]
+ * 
+ */
+
+api.get('/brandsActives',[mdAuth.ensureAuth], brandController.brandsActives);
+
+/**
+ * @swagger
+ * /brandU/:{idBrand}:
+ *  put:
+ *      summary: Actulizar una marca
+ *      tags: [Brand]
+ */
+
+api.put('/brandU/:idBrand',[mdAuth.ensureAuth], brandController.brandU);
 
 module.exports = api;   

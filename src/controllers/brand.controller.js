@@ -38,7 +38,7 @@ exports.createBrand = (req, res)=>{
     }
 }
 
-exports.getBrand = (req, res)=>{
+exports.brand = (req, res)=>{
     try{
         const idBrand = req.params.idBrand;
         if(idBrand){
@@ -53,7 +53,7 @@ exports.getBrand = (req, res)=>{
     }
 }
 
-exports.getBrands = (req, res)=>{
+exports.brands = (req, res)=>{
     try{
         let brands = db.filter(brand => brand.nameMarca)
         return res.status(200).send({message:'Brands found', brands});
@@ -63,7 +63,7 @@ exports.getBrands = (req, res)=>{
     }
 }
 
-exports.deleteBrand = (req, res)=>{
+exports.brandD = (req, res)=>{
     try{
         const idBrand = req.params.idBrand;
         const brandExist = db.find(brand => brand.id === idBrand);
@@ -82,7 +82,7 @@ exports.deleteBrand = (req, res)=>{
     }
 }
 
-exports.getBrandsDeleted = (req, res)=>{
+exports.brandsDeleted = (req, res)=>{
     try{
         let brands = db.filter(brand => brand.status === 'false');
         return res.status(200).send({message:'Brands found', brands});
@@ -92,7 +92,7 @@ exports.getBrandsDeleted = (req, res)=>{
     }
 }
 
-exports.getBrandsActives = (req, res)=>{
+exports.brandsActives = (req, res)=>{
     try{
         let brands = db.filter(brand => brand.status === 'true');
         return res.status(200).send({message:'Brands found', brands});
@@ -102,7 +102,7 @@ exports.getBrandsActives = (req, res)=>{
     }
 }
 
-exports.updateBrand = (req, res)=>{
+exports.brandU = (req, res)=>{
     try{
         const idBrand = req.params.idBrand;
         const brandExist = db.find(brand => brand.id === idBrand);

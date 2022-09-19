@@ -5,8 +5,34 @@ const api = express.Router();
 const saleController = require('../controllers/sale.controller');
 const mdAuth = require('../middlewares/authenticated.middlewares');
 
+/**
+ * @swagger
+ * tags:
+ *  name: Sale
+ *  description: Sale endpoints
+ */
+
 api.get('/test', saleController.test);
+
+/**
+ * @swagger
+ * /sale:
+ *  post:
+ *      summary: Create a new sale
+ *      tags: [Sale]
+ *      description: Sale endpoints
+ */
+
 api.post('/sale', [mdAuth.ensureAuth], saleController.sale);
-api.get('/getSalesUser', [mdAuth.ensureAuth], saleController.getSalesUser);
+
+/**
+ * @swagger
+ * /salesUser:
+ *  get:
+ *      tags: [Sale]
+ *      description: Sale endpoints
+ */
+
+api.get('/salesUser', [mdAuth.ensureAuth], saleController.salesUser);
 
 module.exports = api;

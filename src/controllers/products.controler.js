@@ -13,17 +13,17 @@ exports.test = (req, res) =>{
 
 exports.createProduct = (req, res) =>{
     try{
-        const {id, nameProduct, precio, stock, description} = req.body;
-        if(!nameProduct || !precio || !stock || !description) return res.send({message: 'Please added all paramas...'});
+        const {id, nameProduct, precio, stock, description, idMarca, idProductLine} = req.body;
+        if(!nameProduct || !precio || !stock || !description || !idMarca || !idProductLine) return res.send({message: 'Please added all paramas...'});
         let newProduct = {
             id: uuid.v4(),
             nameProduct,
             precio: Number(precio),
             stock: Number(stock),
             description,
+            idMarca: req.body.idMarca,
+            idProductLine: req.body.idProductLine,
             statusProduct :'true',
-            idMarca: req.params.idMarca,
-            idProductLine: req.params.idProductLine
         };
         let productExist = db.find(product => product.nameProduct === newProduct.nameProduct);
         if(!productExist){
@@ -63,7 +63,7 @@ exports.addedStock = (req, res) =>{
 }
 
 // Obtener solo un producto dado un ID
-exports.getProduct = (req, res) =>{
+exports.product = (req, res) =>{
     try{
         const idProduct = req.params.idProduct;
         if(idProduct){
@@ -79,7 +79,7 @@ exports.getProduct = (req, res) =>{
     }
 }
 
-exports.getProducts = (req, res) =>{
+exports.products = (req, res) =>{
     try{
         let products = db.filter(products => products.nameProduct);
         return res.status(200).send({message: 'Product found', products});
@@ -89,7 +89,7 @@ exports.getProducts = (req, res) =>{
     }
 }
 
-exports.deleteProduct = (req, res) => {
+exports.productD = (req, res) => {
     try{
         const idProduct = req.params.idProduct;
         const productExist = db.find(product => product.id === idProduct);
@@ -106,7 +106,7 @@ exports.deleteProduct = (req, res) => {
     }
 }
 
-exports.getProductsDeleted = (req, res) => {
+exports.productsDeleted = (req, res) => {
     try{
         let productsDeleted = db.filter(products => products.statusProduct === 'false');
         return res.status(200).send({message: 'Product found', productsDeleted})
@@ -116,7 +116,7 @@ exports.getProductsDeleted = (req, res) => {
     }
 }
 
-exports.getProductsActives = (req, res) => {
+exports.productsActives = (req, res) => {
     try{
         let productsActives = db.filter(products => products.statusProduct === 'true');
         return res.status(200).send({message: 'Product found', productsActives});
@@ -126,7 +126,7 @@ exports.getProductsActives = (req, res) => {
     }
 }
 
-exports.updateProduct = (req, res) => {
+exports.productU = (req, res) => {
     const idProduct = req.params.idProduct;
     const productExist = db.find(products => products.id === idProduct);
     if(productExist){

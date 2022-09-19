@@ -35,7 +35,7 @@ exports.createProductLine = (req, res)=>{
 }
 
 // Obtener solo una linea de producto dado el ID
-exports.getProductLine = (req, res)=>{
+exports.productLine = (req, res)=>{
     try{
         const idProductLine = req.params.idProductLine;
         if(idProductLine){
@@ -50,7 +50,7 @@ exports.getProductLine = (req, res)=>{
     }
 }
 
-exports.getProductsLine = (req, res)=>{
+exports.productsLine = (req, res)=>{
     try{
         let productsLine = db.filter(productsLine => productsLine.nameLine)
         return res.status(200).send({message:'ProductsLine found', productsLine});
@@ -60,7 +60,7 @@ exports.getProductsLine = (req, res)=>{
     }
 }
 
-exports.deleteProductLine = (req, res)=>{
+exports.productLineD = (req, res)=>{
     try{
         const idProductLine = req.params.idProductLine;
         const productLineExist = db.find(productLine => productLine.id === idProductLine);
@@ -77,7 +77,7 @@ exports.deleteProductLine = (req, res)=>{
     }
 }
 
-exports.getProductsLineDeleted = (req, res)=>{
+exports.productsLineDeleted = (req, res)=>{
     try{
         let productsLine = db.filter(productsLine => productsLine.status === 'false');
         return res.status(200).send({message:'ProductsLine found', productsLine});
@@ -87,7 +87,7 @@ exports.getProductsLineDeleted = (req, res)=>{
     }
 }
 
-exports.getProductsLineActives = (req, res)=>{
+exports.productsLineActives = (req, res)=>{
     try{
         let productsLine = db.filter(productsLine => productsLine.statusLine === 'true');
         return res.status(200).send({message:'ProductsLine found', productsLine});
@@ -97,7 +97,7 @@ exports.getProductsLineActives = (req, res)=>{
     }
 }
 
-exports.updateProductLine = (req, res)=>{
+exports.productLineU = (req, res)=>{
     try{
         const idProductLine = req.params.idProductLine;
         const productLineExist = db.find(productLine => productLine.id === idProductLine);

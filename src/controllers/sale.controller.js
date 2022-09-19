@@ -57,7 +57,7 @@ exports.sale = (req, res) =>{
 
 
 
-exports.getSalesUser = (req, res) => {
+exports.salesUser = (req, res) => {
     try{
         let user = req.user.sub;
         let userSales = sale.filter(id => user)
