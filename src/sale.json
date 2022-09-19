@@ -1,1 +1,28 @@
-[{"id":"7f7034d6-a4d1-4b83-8c50-f90d507b7b49","date":"2022-09-19T15:34:11.907Z","invoiceName":"Juan","quantity":1,"precio":200,"total":200,"idProducts":[{"idP":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","quantity":1},{"idP":"8674655c-b741-408c-919c-a659c38c40a4","quantity":1}],"statusSale":"true"},{"id":"6307e836-631a-4a91-af3d-0a13a830076c","date":"2022-09-19T15:34:11.908Z","invoiceName":"Juan","quantity":1,"precio":90,"total":90,"idProducts":[{"idP":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","quantity":1},{"idP":"8674655c-b741-408c-919c-a659c38c40a4","quantity":1}],"statusSale":"true"},{"id":"68ba428e-f4ed-4ae0-af20-ceb4ac593027","date":"2022-09-19T15:34:50.725Z","invoiceName":"Juan","quantity":1,"precio":200,"total":200,"idProducts":[{"idP":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","quantity":1},{"idP":"8674655c-b741-408c-919c-a659c38c40a4","quantity":1}],"statusSale":"true"},{"id":"4cf75407-08f3-4236-aa6b-014b7532d277","date":"2022-09-19T15:34:50.727Z","invoiceName":"Juan","quantity":1,"precio":90,"total":90,"idProducts":[{"idP":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","quantity":1},{"idP":"8674655c-b741-408c-919c-a659c38c40a4","quantity":1}],"statusSale":"true"}]
+[
+  {
+    "id": "7f7034d6-a4d1-4b83-8c50-f90d507b7b49",
+    "date": "2022-09-19T15:34:11.907Z",
+    "invoiceName": "Juan",
+    "quantity": 1,
+    "precio": 200,
+    "total": 200,
+    "idProducts": [
+      { "idP": "d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea", "quantity": 1 },
+      { "idP": "8674655c-b741-408c-919c-a659c38c40a4", "quantity": 1 }
+    ],
+    "statusSale": "true"
+  },
+  {
+    "id": "6307e836-631a-4a91-af3d-0a13a830076c",
+    "date": "2022-09-19T15:34:11.908Z",
+    "invoiceName": "Juan",
+    "quantity": 1,
+    "precio": 90,
+    "total": 90,
+    "idProducts": [
+      { "idP": "d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea", "quantity": 1 },
+      { "idP": "8674655c-b741-408c-919c-a659c38c40a4", "quantity": 1 }
+    ],
+    "statusSale": "true"
+  }
+]

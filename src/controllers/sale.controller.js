@@ -52,3 +52,13 @@ exports.sale = (req, res) =>{
         return res.status(500).send({message: 'Error en el servidor (sale)'})
     }
 }
+exports.getSalesUser = (req, res) => {
+    try{
+        let user = req.user.sub;
+        let userSales = sale.filter(id => user)
+        return res.status(200).send({message: 'Invoices user', userSales})
+    }catch (err){
+        console.log(err);
+        return res.status(500).send({message: 'Error en el servidor (getSalesUser)'})
+    }
+}

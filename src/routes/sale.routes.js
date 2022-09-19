@@ -7,6 +7,6 @@ const mdAuth = require('../middlewares/authenticated.middlewares');
 
 api.get('/test', saleController.test);
 api.post('/sale', [mdAuth.ensureAuth], saleController.sale);
-//api.get('/salesUser', [mdAuth.ensureAuth], saleController.salesUser);
+api.get('/getSalesUser', [mdAuth.ensureAuth], saleController.getSalesUser);
 
 module.exports = api;
