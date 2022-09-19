@@ -94,19 +94,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "test",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "123",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"test\",\r\n  \"password\": \"123\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "localhost:3200/user/login",
@@ -153,35 +147,28 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDdiNDhmMS1hMzk2LTRmNjgtODNiMS1jYjhlNjU4MjJiMTQiLCJuYW1lIjoidGVzdCIsInVzZXJuYW1lIjoidGVzdCIsImVtYWlsIjoiamNodWNAY29ycmVvLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFNkdVY0ZVBubWZ4ZXZhWkgxL1JqQi5hTjU4SzhUQm5sM0lNS2Z3YTRtemNkQlJGbmdhM2ouIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTY2Mjk0NDcwMCwiZXhwIjoxNjYyOTYyNzAwfQ.NFpjRZvpR2R_nZJc6BMkEIqmBq5DoRgpOkQwQhAariY",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwibmFtZSI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6ImpjaHVjQGNvcnJlby5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRTZHVWNGVQbm1meGV2YVpIMS9SakIuYU41OEs4VEJubDNJTUtmd2E0bXpjZEJSRm5nYTNqLiIsInJvbGUiOiJST0xFX1VTRVIiLCJpYXQiOjE2NjM2MTI4NzYsImV4cCI6MTY2MzYzMDg3Nn0.gJCFKyTXPev26NmVChW9hykB19sFGREgdPXPTLeE2kA",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nameMarca",
-									"value": "Adidas",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "Es una marca cara",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\r\n  \"nameMarca\": \"Dios\",\r\n  \"description\": \"regularmente es una marca de zapatos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
-							"raw": "localhost:3200/brand/createBrand/eac375b8-6b4a-4959-a228-f220bcb1dc8d",
+							"raw": "localhost:3200/brand/createBrand",
 							"host": [
 								"localhost"
 							],
 							"port": "3200",
 							"path": [
 								"brand",
-								"createBrand",
-								"eac375b8-6b4a-4959-a228-f220bcb1dc8d"
+								"createBrand"
 							]
 						}
 					},
@@ -1069,10 +1056,68 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Sale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwibmFtZSI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6ImpjaHVjQGNvcnJlby5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRTZHVWNGVQbm1meGV2YVpIMS9SakIuYU41OEs4VEJubDNJTUtmd2E0bXpjZEJSRm5nYTNqLiIsInJvbGUiOiJST0xFX1VTRVIiLCJpYXQiOjE2NjM2MTI4NzYsImV4cCI6MTY2MzYzMDg3Nn0.gJCFKyTXPev26NmVChW9hykB19sFGREgdPXPTLeE2kA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \r\n    \"idProducts\": [\r\n        {\r\n            \"idP\": \"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"idP\": \"8674655c-b741-408c-919c-a659c38c40a4\",\r\n            \"quantity\": 1\r\n        }\r\n        ],\r\n        \"invoiceName\": \"Juan\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3200/sale/sale",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"sale",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sale purchase",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwibmFtZSI6InRlc3QiLCJ1c2VybmFtZSI6InRlc3QiLCJlbWFpbCI6ImpjaHVjQGNvcnJlby5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRTZHVWNGVQbm1meGV2YVpIMS9SakIuYU41OEs4VEJubDNJTUtmd2E0bXpjZEJSRm5nYTNqLiIsInJvbGUiOiJST0xFX1VTRVIiLCJpYXQiOjE2NjM1OTY5OTEsImV4cCI6MTY2MzYxNDk5MX0.alh03fJxayFc3rzQcd0G1cs2WaVkP13SnfFU_ZUKMvI",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3200/sale/getSalesUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"sale",
+								"getSalesUser"
+							]
+						}
 					},
 					"response": []
 				}
