@@ -1,1 +1,78 @@
-[{"id":"e07b48f1-a396-4f68-83b1-cb8e65822b14","name":"test","username":"test","email":"jchuc@correo.com","password":"$2a$10$SduV4ePnmfxevaZH1/RjB.aN58K8TBnl3IMKfwa4mzcdBRFnga3j.","role":"ROLE_USER"},{"id":"c79ee5bb-dc54-4833-bd31-1a05ceddfaa4","nameMarca":"Nikes","description":"Es una marca cara","status":"false","userId":"eac375b8-6b4a-4959-a228-f220bcb1dc8d"},{"id":"ea8fd990-3dea-47d1-9736-0f9065d52e8c","nameMarca":"Supreme","description":"Es una marca buenarda","status":"true","userId":"eac375b8-6b4a-4959-a228-f220bcb1dc8d"},{"id":"523dfde2-ad95-4e66-88e5-06b68993ed0f","nameMarca":"Adidas","description":"Es una marca cara","status":"true","userId":"eac375b8-6b4a-4959-a228-f220bcb1dc8d"},{"id":"865bc055-3980-4e46-a245-1a356ae0770e","nameLine":"Playeras","description":"Aqui van todas las playeras","statusLine":"false"},{"id":"14d20d6f-8640-4353-a873-522de205d548","nameLine":"Zapatillas","description":"Aqui van todas las zapatillas","statusLine":"true"},{"id":"1050295b-a964-49b9-8099-dff252ec6f82","nameLine":"Sueteres","description":"Aqui van los sueteres","statusLine":"false"},{"id":"850ec732-a31d-4fc4-9aa2-ee0294b2bad1","nameProduct":"Playera adidad xxl","precio":"200","stock":"10","description":"Es una playera con dibujos unicos","idMarca":"523dfde2-ad95-4e66-88e5-06b68993ed0f","idProductLine":"865bc055-3980-4e46-a245-1a356ae0770e"},{"id":"8674655c-b741-408c-919c-a659c38c40a4","nameProduct":"Playera addidas small","precio":90,"stock":"10","description":"Playera deportiva","statusProduct":"true","idMarca":"523dfde2-ad95-4e66-88e5-06b68993ed0f","idProductLine":"865bc055-3980-4e46-a245-1a356ae0770e"},{"id":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","nameProduct":"Playera adidad L","precio":200,"stock":182,"description":"Es una playera con dibujos unicos","statusProduct":"true","idMarca":"523dfde2-ad95-4e66-88e5-06b68993ed0f","idProductLine":"865bc055-3980-4e46-a245-1a356ae0770e"},{"id":"b7b9d2a8-0b93-442e-8fad-b4e7a06b4416","date":"2022-09-15T21:33:48.940Z","idProducts":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","invoiceName":"Juan","quantity":1,"subTotal":200},{"id":"13dc2a95-fe5f-4476-a041-48cd0604219f","date":"2022-09-15T21:34:04.427Z","idProducts":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","invoiceName":"Juan","quantity":1,"subTotal":200},{"id":"6885e267-0dc6-444c-9972-6147fdf50ec0","date":"2022-09-15T22:57:19.153Z","idProducts":"d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea","invoiceName":"Juan","quantity":3,"subTotal":600}]
+[
+  {
+    "id": "1",
+    "name": "test",
+    "username": "test",
+    "email": "jchuc@correo.com",
+    "password": "$2a$10$SduV4ePnmfxevaZH1/RjB.aN58K8TBnl3IMKfwa4mzcdBRFnga3j.",
+    "role": "ROLE_USER"
+  },
+  {
+    "id": "c79ee5bb-dc54-4833-bd31-1a05ceddfaa4",
+    "nameMarca": "Nikes",
+    "description": "Es una marca cara",
+    "status": "false",
+    "userId": "eac375b8-6b4a-4959-a228-f220bcb1dc8d"
+  },
+  {
+    "id": "ea8fd990-3dea-47d1-9736-0f9065d52e8c",
+    "nameMarca": "Supreme",
+    "description": "Es una marca buenarda",
+    "status": "true",
+    "userId": "eac375b8-6b4a-4959-a228-f220bcb1dc8d"
+  },
+  {
+    "id": "523dfde2-ad95-4e66-88e5-06b68993ed0f",
+    "nameMarca": "Adidas",
+    "description": "Es una marca cara",
+    "status": "true",
+    "userId": "eac375b8-6b4a-4959-a228-f220bcb1dc8d"
+  },
+  {
+    "id": "865bc055-3980-4e46-a245-1a356ae0770e",
+    "nameLine": "Playeras",
+    "description": "Aqui van todas las playeras",
+    "statusLine": "false"
+  },
+  {
+    "id": "14d20d6f-8640-4353-a873-522de205d548",
+    "nameLine": "Zapatillas",
+    "description": "Aqui van todas las zapatillas",
+    "statusLine": "true"
+  },
+  {
+    "id": "1050295b-a964-49b9-8099-dff252ec6f82",
+    "nameLine": "Sueteres",
+    "description": "Aqui van los sueteres",
+    "statusLine": "false"
+  },
+  {
+    "id": "850ec732-a31d-4fc4-9aa2-ee0294b2bad1",
+    "nameProduct": "Playera adidad xxl",
+    "precio": 200,
+    "stock": 114,
+    "description": "Es una playera con dibujos unicos",
+    "idMarca": "523dfde2-ad95-4e66-88e5-06b68993ed0f",
+    "idProductLine": "865bc055-3980-4e46-a245-1a356ae0770e"
+  },
+  {
+    "id": "8674655c-b741-408c-919c-a659c38c40a4",
+    "nameProduct": "Playera addidas small",
+    "precio": 90,
+    "stock": 168,
+    "description": "Playera deportiva",
+    "statusProduct": "true",
+    "idMarca": "523dfde2-ad95-4e66-88e5-06b68993ed0f",
+    "idProductLine": "865bc055-3980-4e46-a245-1a356ae0770e"
+  },
+  {
+    "id": "d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea",
+    "nameProduct": "Playera adidad L",
+    "precio": 200,
+    "stock": 113,
+    "description": "Es una playera con dibujos unicos",
+    "statusProduct": "true",
+    "idMarca": "523dfde2-ad95-4e66-88e5-06b68993ed0f",
+    "idProductLine": "865bc055-3980-4e46-a245-1a356ae0770e"
+  }
+]

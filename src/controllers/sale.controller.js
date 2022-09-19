@@ -12,9 +12,73 @@ exports.test = (req, res) =>{
 exports.sale = (req, res) =>{
     try{
         const idProducts = req.body.idProducts;
-        const productExist = db.find(product => product.id === idProducts);
-        const {id, date, invoiceName, quantity, total, subTotal} = req.body;
-        if(!quantity || !invoiceName) return res.send({message: 'Please added all params'});
+       // const {id, date, invoiceName, quantity,precio} = req.body;
+        for(const id of idProducts){
+            const productExist = db.find(product => product.id === id.idP);
+            if(!productExist){
+                return res.status(400).send({message: 'Product not found'});
+            }else{
+                const  {total} =req.body; 
+                const newSale = {
+                    id: uuid.v4(),
+                    date: new Date(),
+                    invoiceName: req.body.invoiceName,
+                    quantity: Number(id.quantity),
+                    precio: Number(productExist.precio),
+                    total,
+                    idProducts,
+                    statusSale: 'true'
+                };
+                if(!newSale.invoiceName){
+                    return res.status(400).send({message: 'Invoice name is required'});
+                }else{
+                    const subtotal = productExist.precio * Number(id.quantity);
+                    newSale.total = subtotal;
+                    sale.push(newSale);
+                    fs.writeFileSync('src/db.json',JSON.stringify(sale), 'utf-8');
+                    if(newSale, productExist) {
+                        let restaStock = productExist.stock;
+                        let newStock = restaStock -  Number(id.quantity);
+                        productExist.stock = newStock;
+                        fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
+                    }
+                
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+                 //console.log('Product exist');
+                 /*let newSale = {
+                    id: uuid.v4(),
+                    date: new Date(),
+                    idProducts,
+                    invoiceName,
+                    quantity: Number(quantity),
+                    total: Number(total),
+                    //total: Number(total),
+                };
+                let subtotal = productExist.precio * Number(id.quantity);
+                newSale.subTotal = subtotal;
+                productExist.total = total
+                sale.push(newSale);
+                fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
+                let restaStock = productExist.stock;
+                let newStock = restaStock -  Number(req.body.quantity);
+                productExist.stock = newStock;
+                fs.writeFileSync('src/db.json',JSON.stringify(db), 'utf-8');
+                fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
+                return res.send({message: 'Succesful purchase', newSale, productExist})
+        }
+    }
+        
+
         if(productExist){
             let newSale = {
                 id: uuid.v4(),
@@ -38,7 +102,7 @@ exports.sale = (req, res) =>{
             return res.send({message: 'Succesful purchase', newSale, productExist})
         }else{ 
             return res.send({message: 'Product nor found'});
-        }
+        }*/
     }catch(err){
         console.log(err);
         return res.status(500).send({message: 'Error en el servidor (sale)'})

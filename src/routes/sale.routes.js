@@ -5,13 +5,8 @@ const api = express.Router();
 const saleController = require('../controllers/sale.controller');
 const mdAuth = require('../middlewares/authenticated.middlewares');
 
-/**
- * @swagger
- * /sale/test:
- *  get:
- *   description: Use to request all users
- */
 api.get('/test', saleController.test);
-api.post('/sale', [mdAuth.ensureAuth], saleController.sale)
+api.post('/sale', [mdAuth.ensureAuth], saleController.sale);
+//api.get('/salesUser', [mdAuth.ensureAuth], saleController.salesUser);
 
 module.exports = api;

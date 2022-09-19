@@ -16,32 +16,6 @@ exports.test = (req, res)=>{
      return res.send({message: 'test running'});
 }
 
-/**
- * @swagger
- * components:
- *  schemas:
- *      User:
- *          type:object
- *           properties:
- *              name:
- *                 type: string
- *                  description: the name
- *              username:
- *                  type:string
- *                  description: the username
- *              email:
- *                  type: string
- *                  description: the email
- *              password:
- *                  type: string
- *                  description: the email
- *               required:
- *                  - name
- *                  - username
- *                  -email
- *                  -password
- *              
- */
 exports.register = async (req, res)=>{
     try{
 
@@ -68,7 +42,7 @@ exports.register = async (req, res)=>{
                 return res.send({message: 'user not registered'});
             }
         }else{
-            return res.send({message: 'user already exist'});
+            return res.status(500).send({message: 'user already exist'});
         }
   
         //return res.send({message: 'User created'});
