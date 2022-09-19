@@ -59,7 +59,7 @@ const userController = require('../controllers/user.controller')
  * @swagger
  * tags:
  *  name: User
- *  description: User endpoint
+ *  description: User endpoints
  */
 
 api.get('/test', userController.test);

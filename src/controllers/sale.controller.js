@@ -13,6 +13,7 @@ exports.sale = (req, res) =>{
     try{
         const idProducts = req.body.idProducts;
        // const {id, date, invoiceName, quantity,precio} = req.body;
+           const newArray = [];
         for(const id of idProducts){
             const productExist = db.find(product => product.id === id.idP);
             if(!productExist){
@@ -36,21 +37,25 @@ exports.sale = (req, res) =>{
                     newSale.total = subtotal;
                     sale.push(newSale);
                     fs.writeFileSync('src/sale.json',JSON.stringify(sale), 'utf-8');
-                    
                     if(newSale, productExist) {
                         let restaStock = productExist.stock;
                         let newStock = restaStock -  Number(id.quantity);
                         productExist.stock = newStock;
-                        fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');         
+                        fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8'); 
+                        newArray.push(newSale)  
+                        console.log(newArray)  
                     }
                 }
             }
         }
+        return res.status(200).send({newArray})
     }catch(err){
         console.log(err);
         return res.status(500).send({message: 'Error en el servidor (sale)'})
     }
 }
+
+
 
 exports.getSalesUser = (req, res) => {
     try{

@@ -21,8 +21,7 @@ exports.createBrand = (req, res)=>{
             id: uuid.v4(),
             nameMarca,
             description,
-            status: 'true',
-            userId: req.params.idUser
+            status: 'true'
         };
         let brandExist = db.find(brand => brand.nameMarca === newBrand.nameMarca);
         if(!brandExist){
