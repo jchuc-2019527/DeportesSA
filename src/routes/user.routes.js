@@ -37,7 +37,23 @@ const userController = require('../controllers/user.controller')
  *              username: juan123
  *              email: juan123@gmail.com
  *              password: dasa13421sada
+ *      Login:
+ *          type: object
+ *          properties:
+ *              username:
+ *                      type: string
+ *                      description: your username
+ *              password:
+ *                      type: string
+ *                      description: your passworme
+ *          required:
+ *              - username
+ *              - password
+ *          example:
+ *                  username: juan123
+ *                  password: 1234
  */
+
 
 /**
  * @swagger
@@ -45,18 +61,6 @@ const userController = require('../controllers/user.controller')
  *  name: User
  *  description: User endpoint
  */
-
-/**
- * @swagger
- * /user/test:
- *  get:
- *      summary: Return test userController
- *      responses:
- *          200:
- *              description: the test userController
- *      tags: [User]
- */
-
 
 api.get('/test', userController.test);
 /**
@@ -84,8 +88,30 @@ api.get('/test', userController.test);
  */
 
 api.post("/register", userController.register);
-
+/**
+ * @swagger
+ * /user/login:
+ *  post:
+ *      summary: Log in users
+ *      tags: [User]
+ *      requestBody:
+ *          required: true
+ *          content: 
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/Login'
+ *      responses: 
+ *          200:
+ *              description: log in successfuly
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                          $ref: '#/components/schemas/Login'
+ *          500:
+ *              description: some server error
+ */
 api.post('/login', userController.login);
+
 api.get('/**', (req, res) => {
     return res.send('ENPOINT NOT FOUND :(')
 })

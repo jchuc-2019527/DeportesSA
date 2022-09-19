@@ -41,8 +41,7 @@ exports.sale = (req, res) =>{
                         let restaStock = productExist.stock;
                         let newStock = restaStock -  Number(id.quantity);
                         productExist.stock = newStock;
-                        fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
-                       // return res.status(200).send({message: 'Sale succesfuly',})
+                        fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');         
                     }
                 }
             }
@@ -52,6 +51,7 @@ exports.sale = (req, res) =>{
         return res.status(500).send({message: 'Error en el servidor (sale)'})
     }
 }
+
 exports.getSalesUser = (req, res) => {
     try{
         let user = req.user.sub;
