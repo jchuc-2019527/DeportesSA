@@ -2,7 +2,7 @@
 const db = require('../db.json');
 const fs = require('fs');
 const uuid = require('uuid');
-const json_string_sale = fs.readFileSync('src/db.json', 'utf-8');
+const json_string_sale = fs.readFileSync('src/sale.json', 'utf-8');
 const sale = JSON.parse(json_string_sale);
 
 exports.test = (req, res) =>{
@@ -35,74 +35,18 @@ exports.sale = (req, res) =>{
                     const subtotal = productExist.precio * Number(id.quantity);
                     newSale.total = subtotal;
                     sale.push(newSale);
-                    fs.writeFileSync('src/db.json',JSON.stringify(sale), 'utf-8');
+                    fs.writeFileSync('src/sale.json',JSON.stringify(sale), 'utf-8');
+                    
                     if(newSale, productExist) {
                         let restaStock = productExist.stock;
                         let newStock = restaStock -  Number(id.quantity);
                         productExist.stock = newStock;
                         fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
+                       // return res.status(200).send({message: 'Sale succesfuly',})
                     }
-                
                 }
             }
         }
-
-
-
-
-
-
-
-
-                 //console.log('Product exist');
-                 /*let newSale = {
-                    id: uuid.v4(),
-                    date: new Date(),
-                    idProducts,
-                    invoiceName,
-                    quantity: Number(quantity),
-                    total: Number(total),
-                    //total: Number(total),
-                };
-                let subtotal = productExist.precio * Number(id.quantity);
-                newSale.subTotal = subtotal;
-                productExist.total = total
-                sale.push(newSale);
-                fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
-                let restaStock = productExist.stock;
-                let newStock = restaStock -  Number(req.body.quantity);
-                productExist.stock = newStock;
-                fs.writeFileSync('src/db.json',JSON.stringify(db), 'utf-8');
-                fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
-                return res.send({message: 'Succesful purchase', newSale, productExist})
-        }
-    }
-        
-
-        if(productExist){
-            let newSale = {
-                id: uuid.v4(),
-                date: new Date(),
-                idProducts,
-                invoiceName,
-                quantity: Number(quantity),
-                subTotal: Number(subTotal),
-                //total: Number(total),
-            };
-            let subtotal = productExist.precio * Number(req.body.quantity);
-            newSale.subTotal = subtotal;
-            productExist.total = total
-            sale.push(newSale);
-            fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
-            let restaStock = productExist.stock;
-            let newStock = restaStock -  Number(req.body.quantity);
-            productExist.stock = newStock;
-            fs.writeFileSync('src/db.json',JSON.stringify(db), 'utf-8');
-            fs.writeFileSync('src/db.json', JSON.stringify(sale), 'utf-8');
-            return res.send({message: 'Succesful purchase', newSale, productExist})
-        }else{ 
-            return res.send({message: 'Product nor found'});
-        }*/
     }catch(err){
         console.log(err);
         return res.status(500).send({message: 'Error en el servidor (sale)'})
