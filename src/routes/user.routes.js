@@ -67,7 +67,7 @@ api.get('/test', userController.test);
  * @swagger
  * /user/register:
  *  post:
- *      summary: create a new user
+ *      summary: Crear mi usuario
  *      tags: [User]
  *      requestBody:
  *          required: true
@@ -92,7 +92,7 @@ api.post("/register", userController.register);
  * @swagger
  * /user/login:
  *  post:
- *      summary: Log in users
+ *      summary: Log in
  *      tags: [User]
  *      requestBody:
  *          required: true

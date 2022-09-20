@@ -9,7 +9,7 @@ const mdAuth = require('../middlewares/authenticated.middlewares');
  * @swagger
  * tags:
  *  name: Products Line
- *  description: Products line endpoints
+ *  description: Products Line endpoints
  */
 
 api.get('/test', productsLineController.test);

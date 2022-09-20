@@ -18,7 +18,7 @@ api.get('/test', saleController.test);
  * @swagger
  * /sale:
  *  post:
- *      summary: Create a new sale
+ *      summary: Comprar productos 
  *      tags: [Sale]
  *      description: Sale endpoints
  */
@@ -29,6 +29,7 @@ api.post('/sale', [mdAuth.ensureAuth], saleController.sale);
  * @swagger
  * /salesUser:
  *  get:
+ *      summary: Ver las compras del usuario logueado
  *      tags: [Sale]
  *      description: Sale endpoints
  */

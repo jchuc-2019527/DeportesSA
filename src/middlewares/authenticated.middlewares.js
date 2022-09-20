@@ -5,7 +5,20 @@ const moment = require('moment');
 const secret = 'clave_secreta';
 
 exports.ensureAuth = async (req, res, next)=>{
-    if(req.headers.authorization){
+    
+    const bearerAuth = req.headers.authorization;
+    if(!bearerAuth) return res.status(403).send({message: 'The requested does not contain the authentication header'});
+    if( bearerAuth !== 'undefined'){
+        const bearer = bearerAuth.split(' ');
+        const bearerToken = bearer[1];
+        req.token = bearerToken;
+        console.log(bearerToken)
+        next();
+    }else{
+       return res.status(403).send({message: 'Token is not valid or expired'});
+    }
+    
+    /*if(req.headers.authorization){
         try {
             let token = req.headers.authorization.replace(/['"]+/g, '');
             var payload = jwt.decode(token, secret);
@@ -17,7 +30,7 @@ exports.ensureAuth = async (req, res, next)=>{
         next();
     }else{
         return res.status(403).send({message:'The requested does not contain the authentication header'});
-    }
+    }*/
     
 };
 
