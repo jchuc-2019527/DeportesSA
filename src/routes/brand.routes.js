@@ -33,14 +33,22 @@ const mdAuth = require('../middlewares/authenticated.middlewares');
  *          example:
  *                  nameMarca: newBalance
  *                  description: regularmente es una marca de zapatos
+ *      BrandNotFound:
+ *          type: object
+ *          properties:
+ *              msg:
+ *                  type: string
+ *                  description: Mensaje de marca no encontrada
+ *          example:
+ *              msg: Brand not found
  *  parameters:
- *      createBrand:
- *          in: headers
- *          name: token
+ *      idBrand:
+ *          in: path
+ *          name: idBrand
  *          required: true
  *          schema:
  *                  typer: string
- *          description: the token jwt
+ *          description: the brand id
  */
 
 
@@ -80,61 +88,136 @@ api.post('/createBrand',[mdAuth.ensureAuth], brandController.createBrand);
 
 /**
  * @swagger
- * /brand/:{idBrand}:
+ * /brand/getBrand/{idBrand}:
  *  get:
- *      summary: Obetener una marca 
+ *      security:
+ *          - bearerAuth: []
+ *      summary: Obetener una marca por el id
  *      tags: [Brand]
+ *      parameters:
+ *          - $ref: '#/components/parameters/idBrand'
+ *      responses: 
+ *          200:
+ *              description: Marca encontrada
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/Brand'
+ *          404:
+ *              description: Marca no encontrada
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/BrandNotFound'
  */
 
-api.get('/brand/:idBrand',[mdAuth.ensureAuth], brandController.brand);
+api.get('/getBrand/:idBrand',[mdAuth.ensureAuth], brandController.getBrand);
 
 /**
  * @swagger
- * /brands:
+ * /brand/brands:
  *  get:
+ *      security:
+ *          - bearerAuth: []
  *      summary: Obtener todas las marcas
  *      tags: [Brand]
+ *      responses: 
+ *          200:
+ *              description: Marcas encontradas
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/Brand'
  */
 
 api.get('/brands',[mdAuth.ensureAuth], brandController.brands);
 
 /**
  * @swagger
- * /brandD/:{idBrand}:
+ * /brand/brandD/{idBrand}:
  *  delete:
+ *      security: 
+ *          - bearerAuth: []
  *      summary: Eliminar una marca
  *      tags: [Brand]
+ *      parameters:
+ *          - $ref: '#/components/parameters/idBrand'
+ *      responses:
+ *          200:
+ *              description: Marca eliminada
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/Brand'
+ *          404:
+ *              description: Marca no encontrada
  */
 
 api.delete('/brandD/:idBrand',[mdAuth.ensureAuth], brandController.brandD);
 
 /**
  * @swagger
- * /brandsDeleted:
+ * /brand/brandsDeleted:
  *  get:
+ *      security: 
+ *          - bearerAuth: []
  *      summary: Ver las marcas eliminadas
  *      tags: [Brand]
+ *      responses:
+ *          200:
+ *              description: Marcas eliminadas o incativas
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/Brand'
  */
 
 api.get('/brandsDeleted',[mdAuth.ensureAuth], brandController.brandsDeleted);
 
 /**
  * @swagger
- * /brandsActives:
+ * /brand/brandsActives:
  *  get:
+ *      security:
+ *          - bearerAuth: []
  *      summary: Ver las marcas activas
  *      tags: [Brand]
- * 
+ *      responses:
+ *          200:
+ *              description: Marcas activas
+ *              content: 
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/Brand'
  */
 
 api.get('/brandsActives',[mdAuth.ensureAuth], brandController.brandsActives);
 
 /**
  * @swagger
- * /brandU/:{idBrand}:
+ * /brand/brandU/{idBrand}:
  *  put:
+ *      security:
+ *          - bearerAuth: []
  *      summary: Actulizar una marca
  *      tags: [Brand]
+ *      requestBody:
+ *          required: true
+ *          content: 
+ *              application/json:
+ *                  schema: 
+ *                      $ref: '#/components/schemas/Brand'
+ *      parameters:
+ *          - $ref: '#/components/parameters/idBrand' 
+ *      responses:
+ *          200:
+ *              description: Marca actualizada
+ *              content:
+ *                  application/json:
+ *                      schema:
+ *                      $ref: '#/components/schemas/Brand'
+ *          404:
+ *              description: Marca no encontrada
  */
 
 api.put('/brandU/:idBrand',[mdAuth.ensureAuth], brandController.brandU);

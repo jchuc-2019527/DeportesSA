@@ -12,7 +12,6 @@ exports.ensureAuth = async (req, res, next)=>{
         const bearer = bearerAuth.split(' ');
         const bearerToken = bearer[1];
         req.token = bearerToken;
-        console.log(bearerToken)
         next();
     }else{
        return res.status(403).send({message: 'Token is not valid or expired'});

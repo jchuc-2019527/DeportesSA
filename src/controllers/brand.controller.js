@@ -31,25 +31,23 @@ exports.createBrand = (req, res)=>{
         }else{
             return res.send({message: 'Brand already exist'});
         }
-
     }catch(err){
         console.log(err);
         return res.status(500).send({message:'Error en el servidor (Create brand)'});
     }
 }
 
-exports.brand = (req, res)=>{
+exports.getBrand =  (req, res) => {
     try{
-        const idBrand = req.params.idBrand;
-        if(idBrand){
-            let brandExist = db.find(brand => brand.id === idBrand);
-            return res.status(200).send({message:'Brand found', brandExist});
+        const brandExist = db.find(idBrand => idBrand.id === req.params.idBrand);
+        if(!brandExist) {
+            return res.status(400).send({message: 'Brad not found'});
         }else{
-            return res.send({message: 'Brand not found'});
+            return res.status(200).send({message: 'Brand exist', brandExist})
         }
     }catch(err){
         console.log(err);
-        return res.status(500).send({message:'Error en el servidor (Get brands)'});
+        return res.status(500).send({message: 'Error en el servidor(getBrand)'})
     }
 }
 
@@ -73,7 +71,7 @@ exports.brandD = (req, res)=>{
             fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
             return res.status(200).send({message:'Brand deleted', brandExist});
         }else{
-            return res.send({message: 'Brand not found'});
+            return res.status(404).send({message: 'Brand not found'});
         }
         
     }catch(err){
@@ -108,14 +106,13 @@ exports.brandU = (req, res)=>{
         const brandExist = db.find(brand => brand.id === idBrand);
         if(brandExist){
             const {nameMarca, description, status} = req.body;
-            if(!nameMarca || !description || !status) return res.send({message: 'Please added all params'});
+            if(!nameMarca || !description ) return res.send({message: 'Please added all params'});
             brandExist.nameMarca = nameMarca;
             brandExist.description = description;
-            brandExist.status = status;
             fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
             return res.status(200).send({message:'Brand updated', brandExist});
         }else{
-            return res.send({message: 'Brand not found'});
+            return res.status(404).send({message: 'Brand not found'});
         }
     }catch(err){
         console.log(err);

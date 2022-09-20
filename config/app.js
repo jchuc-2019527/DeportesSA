@@ -49,7 +49,7 @@ app.get('/', (req,res) =>{
     res.send('WELCOME TO MY API :D')
 })
 
-app.get('hola', (req, res) => {
+app.get('/**', (req, res) => {
     res.send('ENPOINT NOT FOUND :(')
 })
 exports.initServer = () =>
