@@ -47,8 +47,8 @@ const mdAuth = require('../middlewares/authenticated.middlewares');
  *          name: idBrand
  *          required: true
  *          schema:
- *                  typer: string
- *          description: the brand id
+ *                  type: string
+ *          description: id de la marca
  */
 
 
@@ -105,10 +105,6 @@ api.post('/createBrand',[mdAuth.ensureAuth], brandController.createBrand);
  *                      $ref: '#/components/schemas/Brand'
  *          404:
  *              description: Marca no encontrada
- *              content:
- *                  application/json:
- *                      schema:
- *                      $ref: '#/components/schemas/BrandNotFound'
  */
 
 api.get('/getBrand/:idBrand',[mdAuth.ensureAuth], brandController.getBrand);

@@ -41,9 +41,9 @@ exports.getBrand =  (req, res) => {
     try{
         const brandExist = db.find(idBrand => idBrand.id === req.params.idBrand);
         if(!brandExist) {
-            return res.status(400).send({message: 'Brad not found'});
+            return res.status(404).send({message: 'Brad not found'});
         }else{
-            return res.status(200).send({message: 'Brand exist', brandExist})
+            return res.status(200).send({message: 'Brand found', brandExist})
         }
     }catch(err){
         console.log(err);

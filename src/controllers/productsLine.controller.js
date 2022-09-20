@@ -37,12 +37,11 @@ exports.createProductLine = (req, res)=>{
 // Obtener solo una linea de producto dado el ID
 exports.productLine = (req, res)=>{
     try{
-        const idProductLine = req.params.idProductLine;
-        if(idProductLine){
-            let productLineExist = db.find(productLine => productLine.id === idProductLine);
-            return res.status(200).send({message:'ProductLine found', productLineExist});
+        const productLineExists = db.find(idProductLine => idProductLine.id === req.params.idProductLine);
+        if(!productLineExists){
+            return res.status(404).send({message: 'Brand not found'});
         }else{
-            return res.status(500).send({message: 'Product line not found'});
+            return res.status(200).send({message: 'Produc line found',  productLineExists})
         }
     }catch(err){
         console.log(err);
@@ -69,7 +68,7 @@ exports.productLineD = (req, res)=>{
             fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
             return res.status(200).send({message:'ProductLine deleted', productLineExist});
         }else{
-            return res.send({message: 'ProductLine not found'});
+            return res.status(404).send({message: 'ProductLine not found'});
         }
     }catch(err){
         console.log(err);
@@ -102,15 +101,14 @@ exports.productLineU = (req, res)=>{
         const idProductLine = req.params.idProductLine;
         const productLineExist = db.find(productLine => productLine.id === idProductLine);
         if(productLineExist){
-            const {nameLine, description, statusLine} = req.body;
-            if(!nameLine || !description || !statusLine) return res.send({message: 'Please added all params'});
+            const {nameLine, description} = req.body;
+            if(!nameLine || !description) return res.send({message: 'Please added all params'});
             productLineExist.nameLine = nameLine;
             productLineExist.description = description;
-            productLineExist.statusLine = statusLine;
             fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8');
             return res.status(200).send({message:'ProductLine updated', productLineExist});
         }else{
-            return res.send({message: 'ProductLine not found'});
+            return res.status(404).send({message: 'ProductLine not found'});
         }
     }catch(err){
         console.log(err);
