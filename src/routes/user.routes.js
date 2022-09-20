@@ -45,13 +45,13 @@ const userController = require('../controllers/user.controller')
  *                      description: your username
  *              password:
  *                      type: string
- *                      description: your passworme
+ *                      description: your password
  *          required:
  *              - username
  *              - password
  *          example:
  *                  username: juan123
- *                  password: 1234
+ *                  password: 1234sa
  */
 
 

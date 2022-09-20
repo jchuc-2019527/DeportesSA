@@ -118,6 +118,8 @@ api.get('/productLine/:idProductLine',[mdAuth.ensureAuth], productsLineControlle
  *                  application/json:
  *                      schema:
  *                      $ref: '#/components/schemas/ProductLine'
+ *          500:
+ *              description: Error en el servidor
  *          
  */
 
@@ -156,11 +158,13 @@ api.delete('/productLineD/:idProductLine',[mdAuth.ensureAuth], productsLineContr
  *      tags: [Products Line]
  *      responses:
  *          200:
- *              description: Lineas de productos eliminadas o inacativas
+ *              description: Lineas de productos eliminadas o inactivas
  *              content: 
  *                  application/json:
  *                      schema:
  *                      $ref: '#/components/schemas/ProductLine'
+ *          500: 
+ *              description: Error en el servidor
  */
 
 api.get('/productsLineDeleted',[mdAuth.ensureAuth], productsLineController.productsLineDeleted);
