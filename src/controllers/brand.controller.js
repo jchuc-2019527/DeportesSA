@@ -27,7 +27,7 @@ exports.createBrand = (req, res)=>{
         if(!brandExist){
             brand.push(newBrand);
             fs.writeFileSync('src/db.json', JSON.stringify(brand), 'utf-8');
-            if(brand) return res.send({message: 'Brand created', newBrand});
+            if(brand) return res.status(201).send({message: 'Brand created', newBrand});
         }else{
             return res.send({message: 'Brand already exist'});
         }

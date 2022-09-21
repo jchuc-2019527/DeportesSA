@@ -35,6 +35,8 @@ exports.ensureAuth = async (req, res, next)=>{
 
 exports.isAdmin = (req, res, next)=>{
     try{
+        let token = req.headers.authorization.replace(/['"]+/g, '');
+        var payload = jwt.decode(token, secret);
         const user = req.user;
         if(user.role === 'ROLE_ADMIN'){
             return next();

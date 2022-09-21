@@ -24,7 +24,7 @@ exports.createProductLine = (req, res)=>{
         if(!productsLineExist){
             productsLine.push(newProductsLine);
             fs.writeFileSync('src/db.json', JSON.stringify(productsLine), 'utf-8');
-            if(productsLine) return res.send({message: 'ProductsLine created', newProductsLine});
+            if(productsLine) return res.status(201).send({message: 'ProductsLine created', newProductsLine});
         }else{
             return res.send({message: 'ProductsLine already exist'});
         }

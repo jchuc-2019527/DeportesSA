@@ -67,7 +67,7 @@ api.get('/test', productsLineController.test);
  *                  schema: 
  *                      $ref: '#/components/schemas/ProductLine'
  *      responses:
- *          200:
+ *          201:
  *              description: linea creada
  *              content: 
  *                  application/json:

@@ -94,7 +94,7 @@ api.get('/test', productsController.test);
  *                  schema:
  *                      $ref: '#/components/schemas/Products'
  *      responses: 
- *          200:
+ *          201:
  *              description: producto agregado
  *              content:
  *                  application/json:

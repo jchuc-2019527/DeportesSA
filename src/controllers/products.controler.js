@@ -29,7 +29,7 @@ exports.createProduct = (req, res) =>{
         if(!productExist){
             products.push(newProduct);
             fs.writeFileSync('src/db.json', JSON.stringify(products), 'utf-8');
-            if(products) return res.send({message: 'Product created', newProduct});
+            if(products) return res.status(201).send({message: 'Product created', newProduct});
         }else{
             return res.send({message: 'Product name already exist'});
         }

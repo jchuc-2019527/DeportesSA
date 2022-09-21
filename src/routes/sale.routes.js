@@ -94,27 +94,4 @@ api.get('/test', saleController.test);
 
 api.post('/sale', [mdAuth.ensureAuth], saleController.sale);
 
-/**
- * @swagger
- * /sale/salesUser/{idUser}:
- *  get:
- *      security:
- *          - bearerAuth: []
- *      summary: Ver las compras de un usuario
- *      tags: [Sale]
- *      parameters:
- *          - $ref: '#/components/parameters/idUser'
- *      responses:
- *          200:
- *              description: Compras encontradas
- *              content:
- *                  application/json:
- *                      schema:
- *                      $ref: '#/components/schemas/Sale'
- *          404:
- *              description: 
- */
-
-api.get('/salesUser/:idUser', [mdAuth.ensureAuth], saleController.salesUser);
-
 module.exports = api;

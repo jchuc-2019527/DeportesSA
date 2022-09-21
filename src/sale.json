@@ -1,28 +1,28 @@
 [
   {
-    "id": "51f51178-3767-4c51-a49a-847976b1ac7f",
+    "id": "760fa971-3fff-474c-9632-b2cc4519f05c",
     "idUser": "1",
-    "date": "2022-09-20T22:50:18.017Z",
+    "date": "2022-09-21T01:03:25.340Z",
     "invoiceName": "Juan",
     "quantity": 1,
-    "precio": 100,
-    "total": 100,
+    "precio": 200,
+    "subtotal": 200,
     "idProducts": [
-      { "idP": "d5b93278-4e5a-4fe1-8a5e-eb4c5ab8def4", "quantity": 1 },
+      { "idP": "850ec732-a31d-4fc4-9aa2-ee0294b2bad1", "quantity": 1 },
       { "idP": "d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea", "quantity": 2 }
     ],
     "statusSale": "true"
   },
   {
-    "id": "b87863b5-b235-4a68-904e-020c55e11c3b",
+    "id": "9ce5cd25-33b4-499b-acfe-91b9896115d2",
     "idUser": "1",
-    "date": "2022-09-20T22:50:18.028Z",
+    "date": "2022-09-21T01:03:25.340Z",
     "invoiceName": "Juan",
     "quantity": 2,
     "precio": 200,
-    "total": 400,
+    "subtotal": 400,
     "idProducts": [
-      { "idP": "d5b93278-4e5a-4fe1-8a5e-eb4c5ab8def4", "quantity": 1 },
+      { "idP": "850ec732-a31d-4fc4-9aa2-ee0294b2bad1", "quantity": 1 },
       { "idP": "d0e8f54d-7ab3-4644-ad95-16aa2b4bd9ea", "quantity": 2 }
     ],
     "statusSale": "true"

@@ -20,7 +20,7 @@ exports.sale = (req, res) =>{
             if(!productExist){
                 return res.status(404).send({message: 'Product not found'});
             }else{
-                const  {total} =req.body; 
+                const  {subtotal} =req.body; 
                 const newSale = {
                     id: uuid.v4(),
                     idUser: req.body.idUser,
@@ -28,7 +28,7 @@ exports.sale = (req, res) =>{
                     invoiceName: req.body.invoiceName,
                     quantity: Number(id.quantity),
                     precio: Number(productExist.precio),
-                    total,
+                    subtotal,
                     idProducts,
                     statusSale: 'true'
                 };
@@ -36,7 +36,7 @@ exports.sale = (req, res) =>{
                     return res.status(400).send({message: 'Invoice name, quantity and params idUser is required'});
                 }else{
                     const subtotal = productExist.precio * Number(id.quantity);
-                    newSale.total = subtotal;
+                    newSale.subtotal = subtotal;
                     sale.push(newSale);
                     fs.writeFileSync('src/sale.json',JSON.stringify(sale), 'utf-8');
                     if(newSale, productExist) {
@@ -44,29 +44,15 @@ exports.sale = (req, res) =>{
                         let newStock = restaStock -  Number(id.quantity);
                         productExist.stock = newStock;
                         fs.writeFileSync('src/db.json', JSON.stringify(db), 'utf-8'); 
-                        factura.push(newSale)  
+                        factura.push(newSale)
                     }
                 }
             }
         }
-        return res.status(200).send({newArray})
+        const total = factura.reduce((acc, item) => acc + item.subtotal, 0);
+        return res.status(200).send({message: 'Purchase succesfuly',factura, total});
     }catch(err){
         console.log(err);
         return res.status(500).send({message: 'Error en el servidor (sale)'})
-    }
-}
-
-exports.salesUser = (req, res) => {
-    try{
-        let userSale = invoiceUser.find(user => user.idUser === req.params.idUser)
-        if(userSale !== req.params.idUser){
-            return res.status(404).send({message:'User not found'});
-        }else{
-            let userSalesS = invoiceUser.filter(id => id.idUser)
-            return res.status(200).send({message: 'Invoices user founds', userSalesS})
-        }
-    }catch (err){
-        console.log(err);
-        return res.status(500).send({message: 'Error en el servidor (getSalesUser)'})
     }
 }

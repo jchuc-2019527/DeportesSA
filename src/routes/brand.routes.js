@@ -75,7 +75,7 @@ api.get('/test', brandController.test);
  *                  schema:
  *                      $ref: '#/components/schemas/Brand'
  *      responses:
- *          200:
+ *          201:
  *              description: marca creada
  *              content:
  *                  application/json:

@@ -37,7 +37,7 @@ exports.register = async (req, res)=>{
             user.push(newUser);
             fs.writeFileSync('src/db.json', JSON.stringify(user), 'utf-8');
             if(user) {
-                return res.send({message: 'user created..', newUser});
+                return res.status(201).send({message: 'user created..', newUser});
             }else {
                 return res.send({message: 'user not registered'});
             }
