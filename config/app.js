@@ -23,7 +23,7 @@ const swaggerSpec = {
     },
     servers: [
       {
-        url: "http://localhost:3200",
+        url: "https://deportesnodejs.herokuapp.com",
       },
     ],
   },
