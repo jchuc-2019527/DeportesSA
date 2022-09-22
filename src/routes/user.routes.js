@@ -32,11 +32,10 @@ const userController = require('../controllers/user.controller')
  *              - email
  *              - password
  *          example:
- *              id: 6885e267-0dc6-444c-9972-6147fdf50ec0
- *              name: juan
- *              username: juan123
- *              email: juan123@gmail.com
- *              password: dasa13421sada
+ *              name: test
+ *              username: test
+ *              email: test@gmail.com
+ *              password: 123d
  *      Login:
  *          type: object
  *          properties:
@@ -50,8 +49,8 @@ const userController = require('../controllers/user.controller')
  *              - username
  *              - password
  *          example:
- *                  username: juan123
- *                  password: 1234sa
+ *                  username: test
+ *                  password: 123a
  */
 
 

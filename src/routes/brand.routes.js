@@ -31,7 +31,7 @@ const mdAuth = require('../middlewares/authenticated.middlewares');
  *              - nameMarca
  *              - description
  *          example:
- *                  nameMarca: newBalance
+ *                  nameMarca: adidas
  *                  description: regularmente es una marca de zapatos
  *      BrandNotFound:
  *          type: object
